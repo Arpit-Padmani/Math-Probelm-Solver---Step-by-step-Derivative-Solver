@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Math Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css" integrity="sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2><i class="fas fa-calculator"></i> Math Solver</h2>
+        <nav>
+            <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-edit"></i> Solve Equation</a>
+            <a href="#"><i class="fas fa-history"></i> History</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-bar">
+            <h1><i class="fas fa-chart-line"></i> Dashboard</h1>
+            <div class="profile-menu">
+                <i class="fas fa-user-circle profile-icon"></i>
+                <div class="dropdown">
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="welcome-card">
+                <h2>👋 Welcome, <span id="username">User</span>!</h2>
+                <p>Start solving your math problems easily.</p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Total Equations Solved</h3>
+                    <p id="totalSolved">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Last Solved Equation</h3>
+                    <p id="lastEquation">None</p>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button onclick="window.location.href='solve.html'"><i class="fas fa-calculator"></i> Solve a New Equation</button>
+                <button onclick="window.location.href='history.html'"><i class="fas fa-history"></i> View My History</button>
+            </div>
+
+            <!-- Recent Equations -->
+            <div class="card">
+                <h2><i class="fas fa-list"></i> Recent Equations</h2>
+                <ul id="recentEquations">
+                    <li>No recent equations...</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Toggle Profile Dropdown
+document.querySelector(".profile-icon").addEventListener("click", function () {
+    let dropdown = document.querySelector(".dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+// Simulating User Data (Fetch from DB in actual implementation)
+let username = "John Doe";  // Replace with actual user data
+let totalSolved = 10;       // Fetch total equations solved from DB
+let lastEquation = "x^2 + 3x + 5";  // Fetch last solved equation
+
+document.getElementById("username").textContent = username;
+document.getElementById("totalSolved").textContent = totalSolved;
+document.getElementById("lastEquation").textContent = lastEquation;
+
+// Simulating Recent Equations (Fetch from DB)
+let recentEquations = ["x^2 + 2x", "3x + 5", "sin(x) + cos(x)"];
+let recentList = document.getElementById("recentEquations");
+
+recentList.innerHTML = recentEquations.map(eq => `<li>${eq}</li>`).join("");
+
+    </script>
+</body>
+</html>
