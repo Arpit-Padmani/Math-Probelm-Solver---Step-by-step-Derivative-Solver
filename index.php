@@ -18,11 +18,11 @@
             <?php endif; ?>
 
             <form action="auth/login.php" method="POST">
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="email" name="email" placeholder=" 📩 Email Address" required>
+                <input type="password" name="password" placeholder=" 🔑 Password" required>
                 <button type="submit">Log In</button>
             </form>
-            <p>New here? <a class="link" href="signup.php">Create an account</a></p>
+            <p>New here ? <a class="link" href="signup.php">Create an account</a></p>
         </div>
     </div>
 

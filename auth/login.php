@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../dashboard.php");
             exit();
         } else {
-            $_SESSION['error'] = "Invalid password!";
+            $_SESSION['error'] = "Invalid password! ".$user['password'];
             header("Location: ../index.php");
             exit();
         }

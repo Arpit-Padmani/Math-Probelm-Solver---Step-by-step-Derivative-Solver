@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = mysqli_real_escape_string($conn, trim($_POST['password'])); // Direct password storage
 
     // Check if email already exists
-    $checkQuery = "SELECT id FROM users WHERE email = '$email'";
+    $checkQuery = "SELECT user_id FROM users WHERE email = '$email'";
     $checkResult = $conn->query($checkQuery);
 
     if ($checkResult && $checkResult->num_rows > 0) {
